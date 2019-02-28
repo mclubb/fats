@@ -10,6 +10,10 @@ app.get('/register', function(req, res) {
     res.render('register');
 })
 
+app.get('/steps', function(req, res) {
+    res.render('steps');
+})
+
 app.get('/', function(req, res) {
     res.render('index');
 })
