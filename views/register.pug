@@ -6,17 +6,19 @@ head
     link(href="https://fonts.googleapis.com/css?family=Aclonica%7CPT+Sans%7CPrata" rel="stylesheet")
     link(rel="stylesheet" href="css/style.css")
     body
-            form
-                input(type="text" name="firstname" value="First Name")
+            form(method="POST" action="/register")
+                input(type="text" name="firstname" placeholder="First Name")
                 br
-                input(type="text" name="lastname" value="Last Name")
+                input(type="text" name="lastname" placeholder="Last Name")
                 br
-                input(type="text" name="username" value="Username")
+                input(type="text" name="username" placeholder="Username")
                 br
-                input(type="text" name="password" value="Password")
+                input(type="text" name="password" placeholder="Password")
                 br
-                input(type="text" name="age" value="Age")
+                input(type="text" name="age" placeholder="Age")
                 br
-                input(type="text" name="height" value="Height")
+                input(type="text" name="height" placeholder="Height")
                 br
-                input(type="text" name="weight" value="Weight")
+                input(type="text" name="weight" placeholder="Weight")
+                br
+                input(type="submit" name="btnSubmit" value="Register")
