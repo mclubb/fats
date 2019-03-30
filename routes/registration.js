@@ -1,15 +1,22 @@
 var express = require('express');
 var router = express.Router();
-var user = require('../models/user');
+var registrationController = require('../controllers/registration');
 
 router.get('/', function(req, res) {
     res.render('register');
 });
 
 router.post('/', function(req, res) {
-    user.create(req.body.firstname, req.body.lastname, req.body.username, req.body.password, req.body.age, req.body.height, req.body.weight, function(err, userId) {
-        res.send("Thank you for registering. This is user " + userId);
-    })
+    // Validate form
+
+    // Create user
+    registrationController.create(req, res, function(err, result) {
+        if(err) {
+            console.log(err);
+            return res.send("Sorry, there was a problem signing you up. Please try again later");
+        }
+        return res.send(result);
+    });
 });
 
 module.exports = router;

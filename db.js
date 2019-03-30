@@ -1,6 +1,6 @@
 var mysql = require('mysql')
   , async = require('async')
-  , config = require('config')
+  , config = require('./config/index')
 
 var PRODUCTION_DB = 'app_prod_database'
   , TEST_DB = 'app_test_database'
